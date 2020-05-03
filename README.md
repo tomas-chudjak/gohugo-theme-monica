@@ -6,9 +6,9 @@ Monica is an universal theme for bloggers. It's fast, flexible and extensible fo
 
 ![screenshot](https://raw.githubusercontent.com/tomas-chudjak/gohugo-theme-monica/master/images/screenshot.jpg)
 
-[DEMO](https://tomaschudjak.com/)
+[DEMO Website](https://tomaschudjak.com/)
 
-Features
+**Features**
 
 - Responsive
 - Ready for I18n
@@ -21,10 +21,23 @@ Features
 - Related, featured and last articles
 - Previous and next articles
 
-Theme uses the Milligram CSS library with some basic overide of initial values. For more information see the [Milligram website](https://milligram.io/). Theme's CSS is built with scss and separation of concerns approach. There are initial basic themes present in the css/monica/themes directory.
+**Content**
+- [Installation](#installation)
+- [Getting started](#getting-started)
+    - [The config file](#the-config-file)
+    - [Color themes](#color-themes)
+    - [Google fonts](#google-fonts)
+    - [Simple Line icons](#simple-line-icons)
+    - [CSS framework](#css-framework)
+    - [Custom css & js](#custom-css-js)
+    - [Add author info](#add-author-info)
+    - [Enable Google Analytics](#enable-google-analytics)
+    - [Enable Google Adsense](#enable-google-adsense)
+    - [Sidebar](#sidebar)
+    - [Test the theme](#test-the-theme)
+- [Contributing](#contributing)
 
-
-## Installation
+## Installation {#installation}
 
 Inside the folder of your Hugo site run:
 
@@ -34,26 +47,26 @@ For more information read the official [setup guide](//gohugo.io/overview/instal
 
 
 
-## Getting started
+## Getting started {#getting-started}
 
 After installing the theme successfully it requires a just a few more steps to get your site running.
 
 
-### The config file
+### The config file {#the-config-file}
 
 Take a look inside the [`exampleSite`](https://github.com/tomas-chudjak/gohugo-theme-monica/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](https://github.com/tomas-chudjak/gohugo-theme-monica/blob/master/exampleSite/config.toml). To use it, copy the [`config.toml`](https://github.com/tomas-chudjak/gohugo-theme-monica/blob/master/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to change the strings in this theme.
 
-### Select and modify color theme
+### Color themes {#color-themes}
 
 Atomic design allows to easily extend and modify existing theme styles. In the `monica/assets/css/monica/themes` there are types of files. Default `_Default.scss`, what holds the default color styles applied for body text and footer. The colored variations - Red, Purple, Blue are extending default colors with it's unique styles. 
 
 Initial color scheme style is `_Red.scss` and is selected in `monica/assets/css/monica/monica.scss`
 
-### Select Google fonts
+### Google fonts {#google-fonts}
 
 Theme can use any of the available Google fonts. Open `config.toml` and modify parameter `google_fonts` with any other fonts to be used. Defualt variations are "Bree Serif" for headings and "Open Sans" for body text.
 
-### Use Simple Line icons
+### Simple Line icons {#simple-line-icons}
 
 Default icon set is [https://simplelineicons.github.io/](https://simplelineicons.github.io/). To add icon to the theme, check the site for the list of the available icons or check `monica/assets/css/monica/_Icons.scss`
 
@@ -62,11 +75,30 @@ Default icon set is [https://simplelineicons.github.io/](https://simplelineicons
 <i class="icon-like></i>
 ```
 
-### CSS framework
+### CSS framework {#css-framework}
 
-Default css framework is [Milligram css](https://milligram.io/). Theme is overriding some of the class styles in `monica/assets/css/monica/_General.scss`
+Theme uses the Milligram CSS library with some basic overide of initial values. For more information see the [Milligram website](https://milligram.io/). Theme's CSS is built with scss and separation of concerns approach. There are initial basic themes present in the css/monica/themes directory. 
 
-### Add author info
+Theme is overriding some of the class styles in `monica/assets/css/monica/_General.scss`
+
+
+### Custom CSS & JS {#custom-css-js}
+
+Theme supports custom css & javascript plugins. Open `config.toml` and add url addresses to the plugins to the particular css or js plugin section. CSS is automatically inserted to the website head, before theme styles and javascript is inserted to the page footer.
+
+*config.toml*
+```
+ [params.plugins]
+    # CSS Plugins
+    [[params.plugins.css]]
+    URL = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+
+    # JS Plugins
+    [[params.plugins.js]]
+    URL = "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+```
+
+### Add author info {#add-author-info}
 
 To add author info, create new file in `data/authors/<name>.yaml`. The author details are present in the blog post if the page contains variable `author: "<name>"`.
 
@@ -90,11 +122,11 @@ author: "Monica"
 ...
 ```
 
-### Enable Google Analytics
+### Enable Google Analytics {#enable-google-analytics}
 
 Open `config.toml` and ad your Google Analytics UE Id to the `googleAnalytics=` parameter.
 
-### Enable Google Adsense
+### Enable Google Adsense {#enable-google-adsense}
 
 Theme comes with support for Google Adsense. To enable Adsense set `enable=true` and add value for `client_ID=""`. This will inject script to the website. 
 
@@ -109,13 +141,13 @@ There are two places for Adsense. In the widget and in the post content. To enab
     in_article_slot_ID="xxx"
 ```
 
-### Sidebar
+### Sidebar {#sidebar}
 
 In general, sidebar consist of the several widget components, which can be customizable according your needs. All widgets are stored in `monica/layouts/partials/widget` directory. 
 
 All available sidebar types are stored in `monica/layouts/partials/sidebar`. They are implemented within the pages, lists and homepage code. 
 
-### Test the site
+### Test the theme {#test-the-theme}
 
 To enable local server, run:
 
@@ -123,6 +155,6 @@ To enable local server, run:
 
 Enter [`localhost:1313`](http://localhost:1313/) in the browser.
 
-## Contributing
+## Contributing {#contributing}
 
 If you want to raise issue, please visit [issue tracker](https://github.com/tomas-chudjak/gohugo-theme-monica/issues).

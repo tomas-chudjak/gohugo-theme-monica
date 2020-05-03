@@ -3,11 +3,8 @@ baseURL = "https://example.com"
 languageCode = "en-us"
 title = "Monica"
 theme = "monica"
-
-# Add your google analytics tracking code
 googleAnalytics = ""
 
-# Define number of articles to shown before pagination
 Paginate = 4
 
 [taxonomies]
@@ -15,10 +12,7 @@ Paginate = 4
   tag = "tags"
 
 [params]
-  # Description, shown in the footer
-  description = "Monica is an universal theme for bloggers. It's fast, flexible and extensible for all purposes."
-  
-  # Select google fonts to be used
+  description = "Monica is an universal blog theme for Hugo. It's fast, flexible and extensible for all purposes."
   google_fonts = [
     ["Bree Serif", "400"],
     ["Open Sans", "400, 400i, 700, 700i"]
@@ -36,7 +30,6 @@ Paginate = 4
     widget_slot_ID=""
     in_article_slot_ID=""
 
-  # Social links and icons
   [params.social]
     enable=true
     [[params.social.link]]

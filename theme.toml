@@ -4,7 +4,7 @@
 name = "Monica"
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = "Monica - Perfect Hugo theme for any blog site."
+description = "Monica - Universal blog theme for Hugo."
 homepage = "https://www.tomaschudjak.com"
 tags = ["blog","fast","multilingual","customizable","typography"]
 features = ["customizable theme", "multilingual","seo","open graph","twitter cards", "google analytics", "google adsense","authors","related posts","previous and next posts","editable sidebar","reading time","categories","tags"]
