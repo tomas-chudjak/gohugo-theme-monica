@@ -4,9 +4,9 @@ The intent of this theme is to provide a solid starting place for Hugo sites wit
 
 Monica is an universal theme for bloggers. It's fast, flexible and extensible for all purposes. It supports SEO, i18n, Google tools - analytics, adsense and fonts, theme customization and additional features for seamless blogging experience.
 
-![screenshot](https://raw.githubusercontent.com/budparr/gohugo-theme-ananke/master/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/tomas-chudjak/gohugo-theme-monica/master/images/screenshot.jpg)
 
-[DEMO](https://gohugo-ananke-theme-demo.netlify.com/)
+[DEMO](https://tomaschudjak.com/)
 
 Features
 
@@ -45,15 +45,58 @@ Take a look inside the [`exampleSite`](https://github.com/tomas-chudjak/gohugo-t
 
 ### Select and modify color theme
 
+Atomic design allows to easily extend and modify existing theme styles. In the `monica/assets/css/monica/themes` there are types of files. Default `_Default.scss`, what holds the default color styles applied for body text and footer. The colored variations - Red, Purple, Blue are extending default colors with it's unique styles. 
+
+Initial color scheme style is `_Red.scss` and is selected in `monica/assets/css/monica/monica.scss`
+
 ### Select Google fonts
+
+Theme can use any of the available Google fonts. Open `config.toml` and modify parameter `google_fonts` with any other fonts to be used. Defualt variations are "Bree Serif" for headings and "Open Sans" for body text.
 
 ### Use Simple Line icons
 
-### Use milligram css
+Default icon set is [https://simplelineicons.github.io/](https://simplelineicons.github.io/). To add icon to the theme, check the site for the list of the available icons or check `monica/assets/css/monica/_Icons.scss`
+
+*example:*
+```
+<i class="icon-like></i>
+```
+
+### CSS framework
+
+Default css framework is [Milligram css](https://milligram.io/). Theme is overriding some of the class styles in `monica/assets/css/monica/_General.scss`
 
 ### Add author info
 
+To add author info, create new file in `data/authors/<name>.yaml`. The author details are present in the blog post if the page contains variable `author: "<name>"`.
+
+*data/authors/Monica.yaml:*
+```
+name: "Monica"
+short_bio: "A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame."
+avatar: "/images/author/image.jpg"
+
+social:
+- link:
+  url: "#"
+  title: "Monika's Facebook"
+  icon: "<i class='icon-social-facebook'></i>"
+```
+
+*Enable author in post:*
+```
+...
+author: "Monica"
+...
+```
+
+### Enable Google Analytics
+
+Open `config.toml` and ad your Google Analytics UE Id to the `googleAnalytics=` parameter.
+
 ### Enable Google Adsense
+
+
 
 
 ### Test the site

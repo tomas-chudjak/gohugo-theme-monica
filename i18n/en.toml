@@ -27,6 +27,9 @@ other = "Latest articles"
 one = "Next post"
 other = "Next posts"
 
+[page-not-found]
+other = "We're sorry, but requested page cannot be found"
+
 [posted-in]
 other = "Posted in"
 
