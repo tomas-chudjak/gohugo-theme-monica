@@ -18,6 +18,10 @@ $border-radius: 0.6rem;
 }
 
 // Styles
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
