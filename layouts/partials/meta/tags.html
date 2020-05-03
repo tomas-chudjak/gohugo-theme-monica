@@ -1,0 +1,8 @@
+{{ if isset .Params "tags" }}
+{{ $tagsCount := len .Params.tags }}
+<div class="meta-item meta-item__tags"><i class="icon-tag"></i>
+  {{ range .Params.tags}}
+  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="meta-tag" title="{{ . }}">#{{- . -}}</a>
+  {{ end }}
+</div>
+{{ end }}

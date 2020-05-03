@@ -1,0 +1,18 @@
+<article class="post post-inline">
+  {{- $permalink := .Permalink }}
+  {{- $title := .Title }}
+  {{ with .Resources.GetMatch "cover" }}
+  <div class="post-img">
+    <a href="{{ $permalink }}" title="{{ $title }}">
+      {{ $image := .Fill "225x200" }}
+      {{- partial "image/figure.html" $image }}
+    </a>
+  </div>
+  {{ end }}
+  <div class="post-content">
+    <div class="meta">{{- partial "meta/category" . }}</div>
+    <h3 class="post-title"><a href="{{ $permalink }}" title="{{ $title }}">{{ .Title }}</a></h3>
+    <p>{{ .Summary }}</p>
+    <div class="meta">{{- partial "meta/date" . }}{{- partial "meta/tags" . }}</div>
+  </div>
+</article>

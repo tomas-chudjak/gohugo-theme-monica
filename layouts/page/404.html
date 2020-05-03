@@ -1,0 +1,21 @@
+{{ define "main"}}
+  <div class="row">
+    <div class="column">
+      <section>
+
+        <div class="row">
+          
+
+          <div class="column column-50 column-offset-25">
+            <div class="content-404">
+              <img src="{{ relLangURL (printf "%s" "images/17.png")}}" alt="">
+              <h1>404</h1>
+              <p>We're sorry, but requested page cannot be found</p>
+              <p><a href="{{ .Site.BaseURL }}" title="{{ i18n "go-home" }}">{{ i18n "go-home" }}</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+{{ end }}

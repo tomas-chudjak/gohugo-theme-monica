@@ -1,0 +1,101 @@
+################################### Default Configuration ############################
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "Monica"
+theme = "monica"
+
+# Add your google analytics tracking code
+googleAnalytics = ""
+
+# Define number of articles to shown before pagination
+Paginate = 4
+
+[taxonomies]
+  category = "category"
+  tag = "tags"
+
+[params]
+  # Description, shown in the footer
+  description = "Monica is an universal theme for bloggers. It's fast, flexible and extensible for all purposes."
+  
+  # Select google fonts to be used
+  google_fonts = [
+    ["Bree Serif", "400"],
+    ["Open Sans", "400, 400i, 700, 700i"]
+  ]
+  heading_font = "Bree Serif"
+  body_font = "Open Sans"
+
+  # Blog content - Section what holds the articles
+  blog_section = "blog"
+
+  # Google adsense
+  [params.adsense]
+    enable=false
+    client_ID=""
+    widget_slot_ID=""
+    in_article_slot_ID=""
+
+  # Social links and icons
+  [params.social]
+    enable=true
+    [[params.social.link]]
+    url="#"
+    title="Facebook"
+    icon="<i class='icon-social-facebook'></i>"
+    [[params.social.link]]
+    url="#"
+    title="Twitter"
+    icon="<i class='icon-social-twitter'></i>"
+    [[params.social.link]]
+    url="#"
+    title="Instagram"
+    icon="<i class='icon-social-instagram'></i>"
+    [[params.social.link]]
+    url="#"
+    title="LinkedIn"
+    icon="<i class='icon-social-linkedin'></i>"
+
+  [params.plugins]
+    # This is an example of plugins. Non of them are actually required in this theme
+    # 
+    # CSS Plugins - uncomment to enable
+    # [[params.plugins.css]]
+    # URL = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    # JS Plugins - uncomment to enable
+    # [[params.plugins.js]]
+    # URL = "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+    # [[params.plugins.js]]
+    # URL = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+
+[menu]
+  [[menu.main]]
+    identifier = "markdown"
+    name = "Markdown"
+    pre = "<i class='icon-grid'></i>"
+    url = "/markdown/"
+    weight = 110
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    pre = "<i class='icon-book-open'></i>"
+    url = "/blog/"
+    weight = 100
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Welcome"
+    pre = "<i class='icon-home'></i>"
+    url = "/"
+    weight = 90
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

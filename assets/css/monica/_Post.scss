@@ -1,0 +1,31 @@
+.post{
+  margin-bottom: 6rem;
+
+  &-inline{
+    display: flex;
+  }
+
+  &-img{
+
+    img{
+      max-width: initial;
+    }
+  }
+
+  &-title{
+    text-transform: capitalize;
+    margin-top: 0.8rem;
+    
+    a{
+      @include style-headline;
+    }
+  }
+
+  &-content{
+    padding: 0 2rem;
+  }
+
+  p{
+    margin-bottom: 1.2rem;
+  }
+}

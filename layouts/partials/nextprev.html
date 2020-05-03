@@ -1,0 +1,36 @@
+<div class="nextprev row">
+  {{with .PrevInSection}}
+  {{- $permalink := .Permalink }}
+  {{- $title := .Title }}
+  <div class="prev column">
+    <a href="{{ $permalink }}" class="prev-link" title="{{ .Title }}">
+      {{ with .Resources.GetMatch "cover" }}
+      <div class="prev-img">
+        {{ $image := .Fill "80x80" }}
+        <img src="{{ $image.Permalink }}" />
+      </div>
+      {{ end }}
+      <div class="prev-text"><i class="icon-arrow-left"></i> {{ i18n "next-post" 1 }}</div>
+      <h5 class="prev-title">{{ $title }}</h5>
+    </a>
+  </div>
+  {{end}}
+
+
+  {{with .NextInSection}}
+  {{- $permalink := .Permalink }}
+  {{- $title := .Title }}
+  <div class="next column">
+    <a href="{{ $permalink }}" class="next-link" title="{{ .Title }}">
+      {{ with .Resources.GetMatch "cover" }}
+      <div class="next-img">
+        {{ $image := .Fill "80x80" }}
+        <img src="{{ $image.Permalink }}" />
+      </div>
+      {{ end }}
+      <div class="next-text">{{ i18n "next-post" 1 }} <i class="icon-arrow-right"></i></div>
+      <h5 class="next-title">{{ $title }}</h5>
+    </a>
+  </div>
+  {{end}}
+</div>

@@ -1,0 +1,54 @@
+.nextprev{
+  position: relative;
+  overflow: hidden;
+  padding: 3.2rem 0 0 0;
+  border-top: .1rem solid $color-border;
+  font-size: $font-size-xs;
+}
+
+.next{
+  text-align: right;
+
+  &-link,
+  &-link:hover{
+    text-decoration:none;
+  }
+
+  &-img{
+    float: right;
+    display: flex;
+    margin: 0 0 0 2rem;
+  }
+
+  &-text{
+    text-transform: uppercase;
+  }
+  
+  &-title{
+    font-size: $font-size-s;
+  }
+}
+
+.prev{
+  text-align: left;
+
+  &-link,
+  &-link:hover{
+    text-decoration:none;
+  }
+
+  &-img{
+    float: left;
+    display: flex;
+    margin: 0 2rem 0 0;
+  }
+
+  &-text{
+    text-transform: uppercase;
+  }
+  
+  &-title{
+    font-size: $font-size-s;
+  }
+}
+

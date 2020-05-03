@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+  {{- partial "title" .Title }}
+
+  {{- partial "meta/results" . }}
+
+  <div class="row">
+    <div class="column column-75">
+      <section class="content">
+      {{ range (.Paginator).Pages }}
+        {{- partial "post/inline" . }}
+      {{ end }}
+      </section>
+      {{- template "_internal/pagination.html" . -}}
+    </div>
+    <div class="column">
+      {{- partial "sidebar/default" . }}
+    </div>
+  </div>
+
+{{ end }}

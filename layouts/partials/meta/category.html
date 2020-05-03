@@ -1,0 +1,5 @@
+{{ if isset .Params "category" }}
+<div class="meta-item meta-item__category">{{ i18n "posted-in" }}
+  <a href="{{ "/category/" | relLangURL }}{{ .Params.category | urlize }}" class="meta-link" title="{{ i18n "category" 1 }} {{ .Params.category}}">{{- .Params.category -}}</a>
+</div>
+{{ end }}

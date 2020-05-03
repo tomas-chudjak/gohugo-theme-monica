@@ -1,0 +1,8 @@
+.header{
+  @include style-header;
+
+  .logo{
+    font-size: $font-size-s;
+    @include header-link;
+  }
+}

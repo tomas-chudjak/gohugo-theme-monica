@@ -1,0 +1,5 @@
+{{ if not .Date.IsZero }}
+<div class="meta-item meta-item__date">
+  <i class="icon-calendar"></i>  {{ .PublishDate.Format "2. January 2006" }}
+</div>
+{{ end }}

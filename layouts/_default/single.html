@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+  {{- partial "title" .Title }}
+
+  <div class="row">
+    <div class="column column-75">
+      <section class="content">
+        {{ with .Resources.GetMatch "cover" }}
+        <div class="cover-img">
+          <a href="{{ .Permalink }}" title="{{ .Title }}">
+            {{ $image := .Fill "805x350" }}
+            
+            {{- partial "image/figure-caption.html" $image }}
+          </a>
+        </div>
+        {{ end }}
+
+        <div class="meta">
+          {{- partial "meta/reading-time" . }}
+        </div>
+
+        {{ .Content }}
+
+        <div class="meta meta-border">{{- partial "meta/date" . }}{{- partial "meta/category" . }}{{- partial "meta/tags" . }}</div>
+
+        {{- partial "author" . }}
+
+        {{- partial "nextprev" . }}
+        
+
+      </section>
+    </div>
+    <div class="column">
+      {{- partial "sidebar/article" . }}
+    </div>
+  </div>
+
+{{ end }}

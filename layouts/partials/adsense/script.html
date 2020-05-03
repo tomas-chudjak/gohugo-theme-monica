@@ -1,0 +1,8 @@
+{{- if .Site.Params.adsense.enable }}
+<script data-ad-client="{{ .Site.Params.adsense.client_ID }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+</script>
+{{ end }}

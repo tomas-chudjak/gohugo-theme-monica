@@ -1,0 +1,25 @@
+.nav{
+  ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  li{
+    margin: 0 0 0 4rem;
+    padding: 0;
+
+    &:first-child{
+      margin: 0;
+    }
+  }
+  a{
+    font-size: $font-size-s;
+    text-transform: uppercase;
+    @include header-link;
+  }
+  & [class^="icon-"]{
+    font-weight: bold;
+    margin-right: 0.4rem;
+  }
+}

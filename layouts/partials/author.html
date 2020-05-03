@@ -1,0 +1,20 @@
+{{if isset .Params "author"}}
+{{ $author := (index .Site.Data.authors .Params.author) }}
+<div class="author row">
+  <div class="column column-20">
+    <div class="author-image"><img src="{{ $author.avatar }}" alt="{{ $author.name }}"></div>
+  </div>
+  <div class="column">
+    <h5 class="author-name">{{ $author.name }}</h5>
+    <p class="author-bio">{{  $author.short_bio }}</p>
+
+    {{- if isset $author "social" }}
+    <ul class="author-social">
+      {{- range $author.social }}
+      <li><a href="{{ .url }}" title="{{ .title }}">{{ .icon | safeHTML }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</div>
+{{end}}

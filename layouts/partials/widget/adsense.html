@@ -1,0 +1,11 @@
+{{- if .Site.Params.adsense.enable }}
+<div class="widget">
+<!-- adsense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="{{ .Site.Params.adsense.client_ID }}"
+     data-ad-slot="{{ .Site.Params.adsense.widget_slot_ID }}"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+</div>
+{{ end -}}

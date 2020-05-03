@@ -1,0 +1,46 @@
+[author]
+one = "Author"
+other = "Authors"
+
+[category]
+one = "Category"
+other = "Categories"
+
+[copyright]
+other = "All rights reserved"
+
+[go-home]
+other = "Go back to homepage"
+
+[featured]
+one = "Featured article"
+other = "Featured articles"
+
+[latest]
+one = "Latest article"
+other = "Latest articles"
+
+[next-post]
+one = "Next post"
+other = "Next posts"
+
+[posted-in]
+other = "Posted in"
+
+[read]
+other = "read"
+
+[related]
+one = "Related article"
+other = "Related articles"
+
+[result]
+one = "Result"
+other = "Results"
+
+[social]
+other = "Let's connect"
+
+[tag]
+one = "Tag"
+other = "Tags"

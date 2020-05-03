@@ -1,0 +1,35 @@
+.pagination{
+  list-style-type: none;
+  margin: 0 0 3.2rem;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+
+  .page-item {
+    margin: 0 1.2rem 0 0;
+
+    &.disabled{
+      display: none;
+    }
+    &.active .page-link{
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+
+  .page-link{
+    font-size: $font-size-s;
+    font-family: $font-heading;
+    color: $color-gray;
+    padding: 0.8rem 1.8rem;
+    text-align: center;
+    display: block;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+
+    &:hover{
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+}

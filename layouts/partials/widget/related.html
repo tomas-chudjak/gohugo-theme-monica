@@ -1,0 +1,20 @@
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ with $related }}
+<div class="widget">
+  <h4 class="widget-title">{{ i18n "related" (len $related) }}</h4>
+  <ul class="widget-menu">
+    {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+        {{ with .Resources.GetMatch "cover" }}
+        <div class="widget-img">
+          <img src="{{ .Permalink }}" />
+        </div>
+        {{ end }}
+        {{ .Title }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

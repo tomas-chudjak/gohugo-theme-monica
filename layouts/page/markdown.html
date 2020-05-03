@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+  {{- partial "title" .Title }}
+
+  <div class="row">
+    <div class="column column-75">
+      <section class="content">
+
+        {{ .Content }}
+
+      </section>
+    </div>
+    <div class="column">
+      {{- partial "sidebar/markdown" .}}
+    </div>
+  </div>
+
+{{ end }}

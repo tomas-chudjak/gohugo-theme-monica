@@ -1,0 +1,199 @@
+// Variables
+$font-size-xs: 1.4rem;
+$font-size-s: 1.7rem;
+$font-size-m: 2rem;
+$font-size-l: 2.4rem;
+$font-size-xl: 2.875rem;
+$font-size-xxl: 4rem;
+$font-size-xxxl: 7rem;
+$font-size-body: $font-size-s;
+
+$border-radius: 0.6rem;
+
+// Mixins
+@mixin header-link{
+  @include style-menu-link;
+  line-height: 8rem;
+  font-weight: 700;
+}
+
+// Styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-body;
+  font-size: $font-size-body;
+  line-height: 1.705;
+  letter-spacing: -0.005em;
+  color: $color-text-secondary;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "liga","clig";
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: $font-heading;
+ letter-spacing: -0.025em;
+ color: $color-text-primary;
+ line-height: 1.3;
+ margin: 0 0 1.6rem;
+}
+
+h1{
+  font-size: $font-size-xxxl;
+  line-height: 1.2;
+  margin: 0 0 3.2rem;
+}
+
+h2{
+  font-size: $font-size-xxl;
+  line-height: 1.2;
+}
+
+h3{
+  font-size: $font-size-xl;
+}
+
+h4{
+  font-size: $font-size-l;
+}
+
+h5{
+  font-size: $font-size-m;
+}
+
+h6{
+  font-size: $font-size-s;
+  font-style: italic;
+}
+
+
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul{
+	margin-bottom: 2rem;
+}
+
+hr{
+  border-top: .1rem solid $color-border;
+}
+
+a{
+  color: $color-link;
+
+  &:hover{
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+code{
+  background: initial;
+  font-size: initial;
+  font-family: "Courier New", Courier, monospace;
+}
+
+pre{
+  border-left: .3rem solid $color-primary;
+  >code{
+    font-size: $font-size-xs;
+  }
+}
+
+blockquote{
+  font-style: italic;
+}
+
+figure{
+  display: inline-block;
+  margin: 0 0 1.2rem;
+
+  &[class*="float-left"]{
+    margin-right: 1.6rem;
+  }
+  &[class*="float-right"]{
+    margin-left: 1.6rem;
+  }
+}
+
+figcaption h4,
+figcaption p{
+  font-size: 85%;
+  margin: 0;
+}
+
+.button,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit]{
+  background-color: $color-button;
+  border-color: $color-button;
+
+  &:hover,
+  &:focus{
+    border-color: $color-button-hover;
+    text-decoration: none;
+  }
+}
+
+.button.button-outline,
+button.button-outline,
+input[type=button].button-outline,
+input[type=reset].button-outline,
+input[type=submit].button-outline{
+  color: $color-button;
+  &:hover,
+  &:focus{
+    color: $color-button-hover;
+  }
+}
+
+.button.button-clear,
+button.button-clear,
+input[type=button].button-clear,
+input[type=reset].button-clear,
+input[type=submit].button-clear{
+  color: $color-button;
+
+  &:hover,
+  &:focus{
+    color: $color-button-hover;
+  }
+}
+
+ins {
+  min-width: 5rem;
+  min-height: 5rem;
+}
+
+.center,
+[align="center"]{
+  text-align: center;
+}
+
+.left,
+[align="left"]{
+  text-align: left;
+}
+
+.right,
+[align="right"]{
+  text-align: right;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.content-404{
+  padding: 0;
+  text-align: center;
+}

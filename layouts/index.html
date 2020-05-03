@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+
+  {{- partial "title" .Title }}
+
+  <div class="row">
+    <div class="column column-75">
+      <section class="content">
+        {{ $blogSection := .Site.Params.blog_section }}
+        {{ range first 1 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ) }}
+        {{- partial "post/standard.html" . }}
+        {{ end }}
+
+        <h4 class="subtitle">Recent posts</h4>
+        {{ $paginator := .Paginate ( after 1 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection )) }}
+        {{ range ( after 1 ( first 4 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ))) }}
+            {{- partial "post/inline.html" . }}
+        {{ end }}
+      </section>
+    </div>
+
+    <div class="column">
+      {{- partial "sidebar/home" . }}
+    </div>
+  </div>
+
+
+{{ end }}

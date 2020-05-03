@@ -1,0 +1,34 @@
+.author{
+  margin-top: 3.2rem;
+  padding-bottom: 3.2rem;
+  
+  &-image{
+    overflow:hidden;
+    display: flex;
+    border-radius: 50%;
+  }
+
+  &-name{
+    margin: 1.2rem 0 0;
+  }
+
+  &-bio{
+    font-size: $font-size-xs;
+    margin: 0;
+  }
+
+  &-social{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+      display: inline-block;
+      margin: 0 0.8rem 0 0;
+    }
+    a{
+      font-size: $font-size-xs;
+      @include style-widget-link;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.meta{
+  display: flex;
+  margin:0 0 1.2rem;
+
+  &:empty{
+    display:none;
+  }
+
+  p{
+    margin: 0;
+  }
+
+  &.meta-border{
+    border-top: .1rem dashed;
+    border-bottom: .1rem dashed;
+    border-color: $color-border;
+    padding: 1.2rem 0;
+  }
+
+  &-item{
+    margin: 0 2rem 0 0;
+    font-size: $font-size-xs;
+    color: $color-text-ligth;
+    font-weight: 700;
+
+    &:last-child{
+      margin: 0;
+    }
+  }
+}

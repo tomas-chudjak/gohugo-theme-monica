@@ -1,0 +1,11 @@
+.main{
+  padding-top: 7.5rem;
+  min-height: calc(100vh - 24rem);
+  background: $color-initial;
+  border-radius: $border-radius;
+}
+
+.wrapper{
+  max-width: 144rem;
+  margin: 0 auto;
+}

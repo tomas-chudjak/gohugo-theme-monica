@@ -1,0 +1,58 @@
+// Theme colors
+$color-initial: #fff;
+$color-primary:  #6cc6ff;// Highlight
+
+// Text
+$color-text-primary: $color-project-primary; // Headline
+$color-text-secondary: $color-project-secondary; // sub headline
+$color-text-ligth: rgba($color-text-primary, 0.42);
+
+// Links
+$color-link: $color-primary; // Button
+$color-link-hover: $color-link;
+
+// Buttons
+$color-button: $color-primary;
+$color-button-hover: $color-gray;
+
+// Mixins
+@mixin style-figcaption{
+  background: rgba($color-project-primary, 0.25);
+  color: $color-initial;
+  h4{
+    color: $color-initial;
+  }
+}
+
+@mixin style-header{
+  // Add custom style
+  // background: linear-gradient(90deg, $color-primary 0%, $color-primary 100%);
+}
+
+@mixin style-headline{
+  color: $color-text-primary;
+
+  &:hover{
+    color: $color-text-primary;
+    text-decoration: underline;
+  }
+}
+
+@mixin style-menu-link{
+  color: $color-initial;
+}
+
+@mixin style-wall{
+  // Add custom style
+  //background-color: $color-primary;
+  //background: radial-gradient(circle, adjust-hue($color-primary, 10) 0%, $color-primary 100%);
+  background: linear-gradient(90deg, adjust-hue($color-primary, 10) 0%, $color-primary 100%);
+}
+
+@mixin style-widget-link{
+  color: $color-text-primary;
+
+  &:hover{
+    color: $color-primary;
+  }
+}
