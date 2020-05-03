@@ -1,3 +1,6 @@
+[all-articles]
+other = "All articles"
+
 [author]
 one = "Author"
 other = "Authors"
