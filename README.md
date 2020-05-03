@@ -96,8 +96,24 @@ Open `config.toml` and ad your Google Analytics UE Id to the `googleAnalytics=` 
 
 ### Enable Google Adsense
 
+Theme comes with support for Google Adsense. To enable Adsense set `enable=true` and add value for `client_ID=""`. This will inject script to the website. 
 
+There are two places for Adsense. In the widget and in the post content. To enable advert in the widget, create such component in Google Adsense dashboard and add value of *data-ad-slot* to the theme's config parameter `widget_slot_ID="<value>"`. In similar manner, create advert in article and add value of *data-ad-slot* to `in_article_slot_ID="<value>"`
 
+*config.toml:*
+```
+  [params.adsense]
+    enable=true
+    client_ID="xxx"
+    widget_slot_ID="xxx"
+    in_article_slot_ID="xxx"
+```
+
+### Sidebar
+
+In general, sidebar consist of the several widget components, which can be customizable according your needs. All widgets are stored in `monica/layouts/partials/widget` directory. 
+
+All available sidebar types are stored in `monica/layouts/partials/sidebar`. They are implemented within the pages, lists and homepage code. 
 
 ### Test the site
 
