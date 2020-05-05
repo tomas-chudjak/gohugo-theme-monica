@@ -29,7 +29,7 @@ Monica is an universal theme for bloggers. It's fast, flexible and extensible fo
     - [Google fonts](#google-fonts)
     - [Simple Line icons](#simple-line-icons)
     - [CSS framework](#css-framework)
-    - [Custom css & js](#custom-css-js)
+    - [Custom css & js](##custom-css--js)
     - [Add author info](#add-author-info)
     - [Enable Google Analytics](#enable-google-analytics)
     - [Enable Google Adsense](#enable-google-adsense)
