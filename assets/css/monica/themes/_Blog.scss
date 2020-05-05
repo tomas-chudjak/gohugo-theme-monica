@@ -1,0 +1,82 @@
+// Default colors
+$color-project-primary: #2d3142;
+$color-project-secondary: #2d3142;
+
+// Default gray color
+$color-gray: #606c76;
+
+// Borders
+$color-border:#e9eaeb;
+
+// Footer
+$color-footer: $color-project-primary;
+$color-footer-text: #ccc;
+
+// Mobile
+$color-mobile-navigation-bg: #fff;
+
+// Theme colors
+$color-initial: #fff;
+$color-primary:  #f95738;
+$color-secondary: #4f5d75;
+$color-background: #bfc0c0;
+
+// Text
+$color-text-primary: $color-project-primary;
+$color-text-secondary: $color-project-secondary;
+$color-text-ligth: #bfc0c0;
+
+// Links
+$color-link: $color-primary;
+$color-link-hover: $color-link;
+
+// Buttons
+$color-button: $color-primary;
+$color-button-hover: $color-gray;
+
+// Mixins
+@mixin style-figcaption{
+  background: rgba($color-project-primary, 0.25);
+  color: $color-initial;
+  h4{
+    color: $color-initial;
+  }
+}
+
+@mixin style-header{
+  // Add custom style
+  background: $color-secondary;
+}
+
+@mixin style-headline{
+  color: $color-text-primary;
+
+  &:hover{
+    color: $color-text-primary;
+    text-decoration: underline;
+  }
+}
+
+@mixin style-menu-link{
+  color: $color-initial;
+}
+
+@mixin style-menu-active-link{
+  color: $color-secondary;
+  background: $color-initial;
+}
+
+@mixin style-wall{
+  // Add custom style
+  background-color: $color-text-ligth;
+  //background: radial-gradient(circle, $color-primary 0%, adjust-hue($color-primary, 10) 100%);
+  //background: linear-gradient(90deg, adjust-hue($color-primary, 10) 0%, $color-primary 100%);
+}
+
+@mixin style-widget-link{
+  color: $color-text-primary;
+
+  &:hover{
+    color: $color-primary;
+  }
+}
