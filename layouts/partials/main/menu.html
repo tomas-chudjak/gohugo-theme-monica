@@ -1,0 +1,17 @@
+<nav class="nav menu">
+  <ul>
+    {{ $currentPage := . }}
+
+    {{ range .Site.Menus.main }}
+    <script>
+      console.log('Hugo Debug: ', JSON.parse({{ jsonify . }}))
+        console.log('Hugo Debug: ', JSON.parse({{ jsonify ($currentPage.IsMenuCurrent "main" . ) }}))
+        console.log('Hugo Debug: ', JSON.parse({{ jsonify ( $currentPage.HasMenuCurrent "main" . ) }}))
+			</script>
+    </script>
+      <li class="{{ if or ($currentPage.IsMenuCurrent "main" . ) ( $currentPage.HasMenuCurrent "main" . ) }}active{{end}}">
+        <a href="{{ .URL }}" title="{{ .Name }}">{{ .Pre}} {{ .Name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

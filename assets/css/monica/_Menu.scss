@@ -1,0 +1,43 @@
+.menu{
+  ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  li{
+    margin: 0 0 0 2rem;
+    padding: 0;
+
+    &:first-child{
+      margin: 0;
+    }
+
+    &.active a{
+      @include style-menu-active-link;
+    }
+  }
+  a{
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: $border-radius;
+    @include header-link;
+    @include style-menu-link;
+  }
+  & [class^="icon-"]{
+    font-weight: bold;
+    margin-right: 0.4rem;
+  }
+  & .icon-no-margin{
+    [class^="icon-"]{
+      margin: 0;
+    }
+  }
+}
+
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+
+}

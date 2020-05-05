@@ -18,7 +18,7 @@
   <link rel="icon" href="{{ "images/favicon.png" | absURL }} " type="image/x-icon">
   
   {{ "<!-- Google fonts -->" | safeHTML }}
-  {{- partial "google-fonts" . -}}
+  {{- partial "head/google-fonts" . -}}
 
   {{ "<!-- CSS Plugins -->" | safeHTML }}
   {{- range .Site.Params.plugins.css }}
@@ -30,6 +30,6 @@
   {{- $styles := $sass | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}"  media="screen">
   
-  {{- partial "seo-schema" . -}}
+  {{- partial "head/seo-schema" . -}}
   {{ template "_internal/google_analytics.html" . }}
 </head>

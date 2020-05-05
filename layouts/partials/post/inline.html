@@ -1,18 +1,36 @@
 <article class="post post-inline">
+  <div class="row">
   {{- $permalink := .Permalink }}
   {{- $title := .Title }}
-  {{ with .Resources.GetMatch "cover" }}
-  <div class="post-img">
-    <a href="{{ $permalink }}" title="{{ $title }}">
-      {{ $image := .Fill "225x200" }}
-      {{- partial "image/figure.html" $image }}
-    </a>
+
+  <div class="column column-25">
+    {{ with .Resources.GetMatch "cover" }}
+    <div class="post-img">
+      <a href="{{ $permalink }}" title="{{ $title }}">
+        {{ $desktopImage := .Fill "175x175" }}
+        {{ $defaultImage := .Fill "600x337"}}
+
+        <picture class="picture">
+          <source 
+              media="(min-width: 61rem)"
+             srcset="{{ $desktopImage.RelPermalink }}">
+          <source 
+             media="(max-width: 60rem)"
+             srcset="{{ $defaultImage.RelPermalink }}">
+          <img src="{{ $defaultImage.RelPermalink }}" alt="{{ $title }}">
+       </picture>
+      </a>
+    </div>
+    {{ end }}
   </div>
-  {{ end }}
-  <div class="post-content">
-    <div class="meta">{{- partial "meta/category" . }}</div>
-    <h3 class="post-title"><a href="{{ $permalink }}" title="{{ $title }}">{{ .Title }}</a></h3>
-    <p>{{ .Summary }}</p>
-    <div class="meta">{{- partial "meta/date" . }}{{- partial "meta/tags" . }}</div>
+  <div class="column">
+    <div class="post-content">
+      <div class="meta">{{- partial "meta/category" . }}</div>
+      <h3 class="post-title"><a href="{{ $permalink }}" title="{{ $title }}">{{ .Title }}</a></h3>
+      <p>{{ .Summary }}. <a href="{{ .Permalink }}" title="{{ .Title }}">{{ i18n "read-more" }}...</a></p>
+      <div class="meta mobile-hidden">{{- partial "meta/date" . }}</div>
+      <div class="mobile-show right"><a href="{{ $permalink }}" title="{{ $title }}" class="button button-clear">{{ i18n "read-more" }}</a></div>
+    </div>
+  </div>
   </div>
 </article>

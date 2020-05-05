@@ -1,0 +1,18 @@
+{{- if .Site.Params.breadcrumbs.enable }}
+
+{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+{{ $.Scratch.Add "path" .Site.BaseURL }}
+<div class="breadcrumbs">
+  <a class="breadcrumbs-link" href="{{- .Site.BaseURL }}" title="{{ i18n "home" }}">{{ i18n "home" }}</a>
+  {{- range $index, $element := split $url "/" }}
+  {{- if gt (len . ) 0 }} /
+    {{ $.Scratch.Add "path" $element }}
+      {{ if ne $element "" }}
+      <a href='{{ $.Scratch.Get "path" }}' class="breadcrumbs-link">{{ . }}</a>
+      {{ $.Scratch.Add "path" "/" }}
+      {{ end }}
+  {{ end }}
+  {{ end }}
+</div> 
+
+{{ end }}

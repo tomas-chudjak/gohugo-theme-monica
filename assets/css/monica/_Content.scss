@@ -1,3 +1,10 @@
 .content{
-  padding-right: 3.5rem;
+  padding: 0;
+}
+
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+  .content{
+    padding-right: .5rem;
+  }
 }

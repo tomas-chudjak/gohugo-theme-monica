@@ -10,13 +10,6 @@ $font-size-body: $font-size-s;
 
 $border-radius: 0.6rem;
 
-// Mixins
-@mixin header-link{
-  @include style-menu-link;
-  line-height: 8rem;
-  font-weight: 700;
-}
-
 // Styles
 html{
   scroll-behavior: smooth;
@@ -36,6 +29,12 @@ body {
   font-feature-settings: "liga","clig";
 }
 
+html,
+body{
+  height: 100%;
+  width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
  font-family: $font-heading;
  letter-spacing: -0.025em;
@@ -45,13 +44,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-  font-size: $font-size-xxxl;
-  line-height: 1.2;
+  font-size: $font-size-xxxl - 1.6rem;
+  line-height: 1.07;
   margin: 0 0 3.2rem;
 }
 
 h2{
-  font-size: $font-size-xxl;
+  font-size: $font-size-xxl - 0.8rem;
   line-height: 1.2;
 }
 
@@ -200,4 +199,40 @@ ins {
 .content-404{
   padding: 0;
   text-align: center;
+}
+
+.hidden{
+  display: none;
+}
+
+.no-margin{
+  margin: 0;
+}
+
+.mobile-hidden{
+  display: none;
+}
+
+.mobile-show{
+  display: inherit;
+}
+
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+  h1{
+    font-size: $font-size-xxxl;
+    line-height: 1.2;
+    margin: 0 0 3.2rem;
+  }
+  
+  h2{
+    font-size: $font-size-xxl;
+    line-height: 1.2;
+  }
+  .mobile-hidden{
+    display:inherit;
+  }
+  .mobile-show{
+    display: none;
+  }
 }

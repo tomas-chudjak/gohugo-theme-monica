@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-  {{- partial "title" .Title }}
+  {{- partial "main/breadcrumbs" . }}
+  {{- partial "main/title" .Title }}
 
   <div class="row">
     <div class="column column-75">
@@ -23,9 +24,11 @@
 
         <div class="meta meta-border">{{- partial "meta/date" . }}{{- partial "meta/category" . }}{{- partial "meta/tags" . }}</div>
 
-        {{- partial "author" . }}
+        {{- partial "main/author" . }}
 
-        {{- partial "nextprev" . }}
+        {{- partial "main/nextprev" . }}
+
+        <hr>
         
 
       </section>

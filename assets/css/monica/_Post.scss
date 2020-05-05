@@ -1,31 +1,42 @@
 .post{
-  margin-bottom: 6rem;
-
-  &-inline{
-    display: flex;
-  }
+  margin-bottom: 3.6rem;
 
   &-img{
+    margin: 0 0 0.8rem;
 
     img{
-      max-width: initial;
+      max-width: 100%;
+    }
+
+    a{
+      display: flex;
     }
   }
 
   &-title{
     text-transform: capitalize;
-    margin-top: 0.8rem;
+    margin:0;
     
     a{
       @include style-headline;
     }
   }
 
-  &-content{
-    padding: 0 2rem;
-  }
-
   p{
     margin-bottom: 1.2rem;
+  }
+}
+
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+  .post{
+ 
+    &-inline{
+      display: flex;
+    }
+
+    &-content{
+      padding: 0 2rem;
+    }
   }
 }

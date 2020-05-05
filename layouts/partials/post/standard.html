@@ -4,14 +4,14 @@
   {{ with .Resources.GetMatch "cover" }}
   <div class="cover-img">
     <a href="{{ $permalink }}" title="{{ $title }}">
-      {{ $image := .Fill "805x350" }}
-      {{- partial "image/figure-caption.html" $image }}
+      {{- partial "image/figure-caption.html" . }}
     </a>
   </div>
   {{ end }}
 
   <div class="meta">{{- partial "meta/category" . }}</div>
   <h2 class="post-title"><a href="{{ $permalink }}" title="{{ $title }}">{{ .Title }}</a></h2>
-  <p>{{ .Summary }}</p>
-  <div class="meta">{{- partial "meta/date" . }}{{- partial "meta/reading-time" . }}{{- partial "meta/tags" . }}</div>
+  <p>{{ .Summary }}. <a href="{{ .Permalink }}" title="{{ .Title }}">{{ i18n "read-more" }}...</a></p>
+  <div class="meta mobile-hidden">{{- partial "meta/date" . }}{{- partial "meta/reading-time" . }}</div>
+  <div class="mobile-show right"><a href="{{ $permalink }}" title="{{ $title }}" class="button button-clear">{{ i18n "read-more" }}</a></div>
 </article>

@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="container">
+    <div class="header-row">
+      <div class="header-item">
+        <a href="{{ .Site.BaseURL }}" class="logo" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+      </div>
+      <div class="header-item mobile-hidden">
+        {{- partial "main/menu.html" . }}
+      </div>
+      <div class="header-item mobile-hidden">
+        {{- if .Site.Params.social.enable }}
+          <div class="menu ">
+            <ul>
+              {{- range .Site.Params.social.link }}
+              <li><a href="{{ .url }}" title="{{ .title }}" class="icon-no-margin">{{ if isset . "icon" }}{{ .icon | safeHTML }} {{end}}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      </div>
+      <div class="header-item mobile-menu mobile-show">
+        <a id="mobileMenuLink" href="#" class="mobile-menu__link mobile-menu__toggle-button"><i class="icon-menu"></i> {{ i18n "menu" }}</a>
+      </div>
+    </div>
+  </div>
+</header>

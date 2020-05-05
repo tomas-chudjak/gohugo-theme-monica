@@ -1,0 +1,20 @@
+<div id="mobileNavigation" class="mobile-navigation">
+  <div class="mobile-navigation__header right">
+    
+  </div>
+  <div class="mobile-navigation__content">
+    <nav class="mobile-nav">
+      <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          <li class="{{ if $currentPage.HasMenuCurrent "main" .}}active{{end}}">
+            <a href="{{ .URL }}" title="{{ .Name }}">{{ .Pre}} {{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+  <div class="mobile-navigation__footer center">
+    <a id="mobileCloseLink" href="#" class="mobile-navigation__close mobile-menu__toggle-button"><i class="icon-close"></i></a>
+  </div>
+</div>

@@ -7,6 +7,7 @@
   }
 
   &-img{
+    margin: 0 0 1rem;
     display: flex;
     overflow: hidden;
     border-radius: $border-radius;
@@ -14,11 +15,12 @@
 
   &-menu{
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 0.8rem;
     padding: 0;
 
     li{
       font-size: $font-size-s;
+      margin: 0 0 0.8rem;
     }
     a{
       @include style-widget-link;
@@ -37,5 +39,26 @@
         font-size: $font-size-xs;
       }
     }
+
+    &.widget-menu__articles{
+      li{
+        margin: 0 0 4rem;
+      }
+    }
   }
+}
+
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+
+  .widget{
+    &-menu{
+      &.widget-menu__articles{
+        li{
+          margin: 0 0 2.6rem;
+        }
+      }
+    }
+  }
+
 }

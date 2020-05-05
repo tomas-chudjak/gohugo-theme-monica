@@ -1,6 +1,5 @@
 .meta{
-  display: flex;
-  margin:0 0 1.2rem;
+  margin:0 0 0.2rem;
 
   &:empty{
     display:none;
@@ -18,13 +17,24 @@
   }
 
   &-item{
-    margin: 0 2rem 0 0;
+    margin: 0 0 1.2rem 0;
     font-size: $font-size-xs;
     color: $color-text-ligth;
     font-weight: 700;
 
     &:last-child{
       margin: 0;
+    }
+  }
+}
+
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+  .meta{
+    display: flex;
+
+    &-item{
+      margin: 0 2rem 0 0;
     }
   }
 }

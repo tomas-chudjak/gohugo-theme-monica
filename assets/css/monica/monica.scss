@@ -1,14 +1,19 @@
+// override of the default Milligram's grid
+@import '_Grid';
+
+// Monica's theme
 @import 'themes/Default';
-@import 'themes/Red';
 @import 'General';
+@import 'Mixins';
 @import 'Header';
-@import 'Nav';
+@import 'Menu';
 @import 'Main';
 @import 'Content';
 @import 'Title';
 @import 'Post';
 @import 'Cover';
 @import 'Figure';
+@import 'Picture';
 @import 'Meta';
 @import 'Footer';
 @import 'Sidebar';
@@ -17,4 +22,7 @@
 @import 'Author';
 @import 'Wall';
 @import 'Icons';
-@import 'Nextprev';
+@import 'NextPrev';
+@import 'Breadcrumbs';
+@import 'MobileMenu';
+@import 'MobileNavigation';

@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-  {{- partial "title" .Title }}
+  {{- partial "main/breadcrumbs" . }}
+  {{- partial "main/title" .Title }}
 
   <div class="row">
     <div class="column column-75">

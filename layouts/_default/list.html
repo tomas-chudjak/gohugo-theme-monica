@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-  {{- partial "title" .Title }}
+  {{- partial "main/breadcrumbs" . }}
+  {{- partial "main/title" .Title }}
 
   {{- partial "meta/results" . }}
 
@@ -12,6 +13,7 @@
       {{ end }}
       </section>
       {{- template "_internal/pagination.html" . -}}
+      <hr>
     </div>
     <div class="column">
       {{- partial "sidebar/default" . }}

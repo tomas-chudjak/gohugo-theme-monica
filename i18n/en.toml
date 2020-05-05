@@ -9,6 +9,9 @@ other = "Authors"
 one = "Category"
 other = "Categories"
 
+[close-menu]
+other = "Close menu"
+
 [copyright]
 other = "All rights reserved"
 
@@ -19,9 +22,15 @@ other = "Go back to homepage"
 one = "Featured article"
 other = "Featured articles"
 
+[home]
+other = "Home"
+
 [latest]
 one = "Latest article"
 other = "Latest articles"
+
+[menu]
+other = "Menu"
 
 [next-post]
 one = "Next post"
@@ -33,7 +42,13 @@ other = "We're sorry, but requested page cannot be found"
 [posted-in]
 other = "Posted in"
 
-[read]
+[prev-post]
+other = "Previous post"
+
+[read-more]
+other = "Read more"
+
+[read-time]
 other = "read"
 
 [related]

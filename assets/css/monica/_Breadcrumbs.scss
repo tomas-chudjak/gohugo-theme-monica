@@ -1,0 +1,9 @@
+.breadcrumbs{
+  color: $color-gray;
+  
+  &-link{
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    color: $color-gray;
+  }
+}

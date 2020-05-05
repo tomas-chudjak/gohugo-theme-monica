@@ -297,7 +297,7 @@ Colons "**:**" can be used to align columns.
 | zebra stripes | are neat      |    $1 |
 
 &nbsp;
-## Horizontal rule (#horizontal-rule)
+## Horizontal rule {#horizontal-rule}
 There are multiple ways how to create horizontal rules
 ```
 Hyphens

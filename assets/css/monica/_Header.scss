@@ -1,8 +1,31 @@
 .header{
+  padding: 0;
+  margin: 0 0 3.5rem;
   @include style-header;
 
+  &-row{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-item{
+    
+  }
+
   .logo{
-    font-size: $font-size-s;
     @include header-link;
+    @include style-menu-link;
+  }
+}
+
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+
+  .header{
+    border-radius: $border-radius $border-radius 0 0;
+    
+    .logo{
+      padding: 0;
+    }
   }
 }

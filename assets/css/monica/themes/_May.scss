@@ -1,14 +1,32 @@
+// Default colors
+$color-project-primary: #1f1235;
+$color-project-secondary: #1b1425;
+
+// Default gray color
+$color-gray: #606c76;
+
+// Borders
+$color-border:#e9eaeb;
+
+// Footer
+$color-footer: #1c1b1d;
+$color-footer-text: #ccc;
+
+// Mobile
+$color-mobile-navigation-bg: #fff;
+
 // Theme colors
 $color-initial: #fff;
-$color-primary:  #6cc6ff;// Highlight
+$color-primary:  #3da9fc;// Highlight
+$color-secondary: #ef4565; 
 
 // Text
-$color-text-primary: $color-project-primary; // Headline
-$color-text-secondary: $color-project-secondary; // sub headline
+$color-text-primary: $color-project-primary;
+$color-text-secondary: $color-project-secondary;
 $color-text-ligth: rgba($color-text-primary, 0.42);
 
 // Links
-$color-link: $color-primary; // Button
+$color-link: $color-primary;
 $color-link-hover: $color-link;
 
 // Buttons
@@ -26,7 +44,7 @@ $color-button-hover: $color-gray;
 
 @mixin style-header{
   // Add custom style
-  // background: linear-gradient(90deg, $color-primary 0%, $color-primary 100%);
+  background: $color-secondary;
 }
 
 @mixin style-headline{
@@ -42,11 +60,16 @@ $color-button-hover: $color-gray;
   color: $color-initial;
 }
 
+@mixin style-menu-active-link{
+  color: $color-secondary;
+  background: $color-initial;
+}
+
 @mixin style-wall{
   // Add custom style
   //background-color: $color-primary;
-  //background: radial-gradient(circle, adjust-hue($color-primary, 10) 0%, $color-primary 100%);
-  background: linear-gradient(90deg, adjust-hue($color-primary, 10) 0%, $color-primary 100%);
+  background: radial-gradient(circle, $color-primary 0%, adjust-hue($color-primary, 10) 100%);
+  //background: linear-gradient(90deg, adjust-hue($color-primary, 10) 0%, $color-primary 100%);
 }
 
 @mixin style-widget-link{

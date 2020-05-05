@@ -6,31 +6,10 @@
   font-size: $font-size-xs;
 }
 
-.next{
-  text-align: right;
-
-  &-link,
-  &-link:hover{
-    text-decoration:none;
-  }
-
-  &-img{
-    float: right;
-    display: flex;
-    margin: 0 0 0 2rem;
-  }
-
-  &-text{
-    text-transform: uppercase;
-  }
-  
-  &-title{
-    font-size: $font-size-s;
-  }
-}
-
+.next,
 .prev{
-  text-align: left;
+  order:1;
+  margin-bottom: 3.2rem;
 
   &-link,
   &-link:hover{
@@ -52,3 +31,14 @@
   }
 }
 
+// Larger than mobile screen
+@media (min-width: 40.0rem){
+  .next{
+    text-align: right;
+
+    &-img{
+      float: right;
+      margin: 0 0 0 2rem;
+    }
+  }
+}

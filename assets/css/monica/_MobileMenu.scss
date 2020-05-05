@@ -1,0 +1,12 @@
+.mobile-menu{
+
+  &__link{
+    @include header-link;
+    @include style-menu-link;
+
+    &:hover{
+      color: $color-initial;
+      text-decoration: none;
+    }
+  }
+}
