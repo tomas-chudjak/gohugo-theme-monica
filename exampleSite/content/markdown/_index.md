@@ -1,7 +1,6 @@
 ---
 title: "Markdown reference"
 description: "List of elements styled with this theme"
-url: "markdown"
 type: "page"
 layout: "markdown"
 ---

@@ -12,7 +12,7 @@ Paginate = 4
   tag = "tags"
 
 [params]
-  description = "Monica is an universal blog theme for Hugo. It's fast, flexible and extensible for all purposes."
+  description = "Monica is an universal theme for bloggers. It's fast, flexible and extensible for all purposes."
   google_fonts = [
     ["Bree Serif", "400"],
     ["Open Sans", "400, 400i, 700, 700i"]
@@ -22,6 +22,10 @@ Paginate = 4
 
   # Blog content - Section what holds the articles
   blog_section = "blog"
+
+  # Breadcrumbs
+  [params.breadcrumbs]
+    enable=true
 
   # Google adsense
   [params.adsense]
@@ -60,6 +64,8 @@ Paginate = 4
     # URL = "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
     # [[params.plugins.js]]
     # URL = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+
+SectionPagesMenu = "main"
 
 [menu]
   [[menu.main]]
