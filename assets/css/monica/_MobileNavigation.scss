@@ -1,6 +1,7 @@
 .mobile-navigation{
   display: none;
   flex-direction: column;
+  justify-content: space-between;
   background: $color-mobile-navigation-bg;
 
   &.open{
