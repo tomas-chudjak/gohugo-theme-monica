@@ -24,7 +24,7 @@ $color-background: #bfc0c0;
 // Text
 $color-text-primary: $color-project-primary;
 $color-text-secondary: $color-project-secondary;
-$color-text-ligth: #bfc0c0;
+$color-text-ligth: rgba($color-secondary, 0.6);
 
 // Links
 $color-link: $color-primary;
@@ -68,7 +68,7 @@ $color-button-hover: $color-gray;
 
 @mixin style-wall{
   // Add custom style
-  background-color: $color-text-ligth;
+  background-color: $color-background;
   //background: radial-gradient(circle, $color-primary 0%, adjust-hue($color-primary, 10) 100%);
   //background: linear-gradient(90deg, adjust-hue($color-primary, 10) 0%, $color-primary 100%);
 }

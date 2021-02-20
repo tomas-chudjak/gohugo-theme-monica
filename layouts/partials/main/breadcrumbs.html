@@ -8,7 +8,7 @@
   {{- if gt (len . ) 0 }} /
     {{ $.Scratch.Add "path" $element }}
       {{ if ne $element "" }}
-      <a href='{{ $.Scratch.Get "path" }}' class="breadcrumbs-link">{{ . }}</a>
+      <a href="{{ $.Scratch.Get "path" }}" class="breadcrumbs-link">{{ . }}</a>
       {{ $.Scratch.Add "path" "/" }}
       {{ end }}
   {{ end }}

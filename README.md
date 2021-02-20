@@ -72,7 +72,7 @@ Default icon set is [https://simplelineicons.github.io/](https://simplelineicons
 
 *example:*
 ```
-<i class="icon-like></i>
+<i class="icon-like"></i>
 ```
 
 ### CSS framework ###

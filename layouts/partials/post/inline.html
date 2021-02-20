@@ -3,6 +3,7 @@
   {{- $permalink := .Permalink }}
   {{- $title := .Title }}
 
+  {{ if .Resources.GetMatch "cover" }}
   <div class="column column-25">
     {{ with .Resources.GetMatch "cover" }}
     <div class="post-img">
@@ -23,13 +24,13 @@
     </div>
     {{ end }}
   </div>
+  {{ end }}
   <div class="column">
     <div class="post-content">
       <div class="meta">{{- partial "meta/category" . }}</div>
       <h3 class="post-title"><a href="{{ $permalink }}" title="{{ $title }}">{{ .Title }}</a></h3>
       <p>{{ .Summary }}. <a href="{{ .Permalink }}" title="{{ .Title }}">{{ i18n "read-more" }}...</a></p>
       <div class="meta mobile-hidden">{{- partial "meta/date" . }}</div>
-      <div class="mobile-show right"><a href="{{ $permalink }}" title="{{ $title }}" class="button button-clear">{{ i18n "read-more" }}</a></div>
     </div>
   </div>
   </div>

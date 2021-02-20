@@ -7,7 +7,7 @@
     <div class="column column-75">
       <section class="content">
         {{ $blogSection := .Site.Params.blog_section }}
-        {{ $paginator := .Paginate ( where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ) }}
+        {{ $paginator := .Paginate ( where .Site.RegularPages.ByDate "Section" $blogSection ) }}
         {{ range $paginator.Pages }}
             {{- partial "post/inline.html" . }}
         {{ end }}

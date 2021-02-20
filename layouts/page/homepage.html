@@ -11,7 +11,7 @@
         {{- partial "post/standard.html" . }}
         {{ end }}
 
-        <h5 class="subtitle">{{ i18n "recent-posts" }}</h5>
+        <h4 class="subtitle">Recent posts</h4>
         {{ $paginator := .Paginate ( after 1 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection )) }}
         {{ range ( after 1 ( first 4 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ))) }}
             {{- partial "post/inline.html" . }}

@@ -51,6 +51,9 @@ other = "Read more"
 [read-time]
 other = "read"
 
+[recent-posts]
+other = "Recent posts"
+
 [related]
 one = "Related article"
 other = "Related articles"
