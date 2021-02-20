@@ -1,33 +1,34 @@
 {{ define "main" }}
 
 
-  {{- partial "main/title" .Title }}
+{{- partial "main/title" .Title }}
 
-  <div class="row">
-    <div class="column column-75">
-      <section class="content">
-        {{ $blogSection := .Site.Params.blog_section }}
-        {{ range first 1 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ) }}
-        {{- partial "post/standard.html" . }}
-        {{ end }}
+<div class="row">
+  <div class="column column-75">
+    <section class="content">
+      {{ $blogSection := .Site.Params.blog_section }}
+      {{ range first 1 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ) }}
+      {{- partial "post/standard.html" . }}
+      {{ end }}
 
-        <h5 class="subtitle">{{ i18n "recent-posts" }}</h5>
-        {{ $paginator := .Paginate ( after 1 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection )) }}
-        {{ range ( after 1 ( first 4 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ))) }}
-            {{- partial "post/inline.html" . }}
-        {{ end }}
+      <h5 class="subtitle">{{ i18n "recent-posts" }}</h5>
+      {{ $paginator := .Paginate ( after 1 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection )) }}
+      {{ range ( after 1 ( first 4 (where .Site.RegularPages.ByDate.Reverse "Section" $blogSection ))) }}
+      {{- partial "post/inline.html" . }}
+      {{ end }}
 
-        <div class="center">
-          <a href="{{ $blogSection | relLangURL }}" class="button button-outline" title="{{ i18n "all-articles" }}">{{ i18n "all-articles" }}</a>
-        </div>
-        <hr>
-      </section>
-    </div>
-
-    <div class="column">
-      {{- partial "sidebar/home" . }}
-    </div>
+      <div class="center">
+        <a href="{{ $blogSection | relLangURL }}" class="button button-outline" title="{{ i18n " all-articles" }}">{{
+          i18n "all-articles" }}</a>
+      </div>
+      <hr>
+    </section>
   </div>
+
+  <div class="column">
+    {{- partial "sidebar/home" . }}
+  </div>
+</div>
 
 
 {{ end }}
