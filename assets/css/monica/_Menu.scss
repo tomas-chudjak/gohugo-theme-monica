@@ -14,7 +14,8 @@
     }
 
     &.active a{
-      @include style-menu-active-link;
+      color: var(--color-primary);
+      background: var(--color-initial);
     }
   }
   a{
@@ -24,7 +25,8 @@
     padding: 1rem;
     border-radius: $border-radius;
     @include header-link;
-    @include style-menu-link;
+    color: var(--color-initial);
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
   & [class^="icon-"]{
     font-weight: bold;
@@ -35,9 +37,4 @@
       margin: 0;
     }
   }
-}
-
-// Larger than mobile screen
-@media (min-width: 40.0rem){
-
 }

@@ -13,6 +13,11 @@
     width: 100%;
     padding: 0.8rem 2rem;
     font-size: $font-size-s;
-    @include style-figcaption;
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--color-initial);
+
+    h4{
+      color: var(--color-initial);
+    }
   }
 }

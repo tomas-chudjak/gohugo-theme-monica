@@ -1,29 +1,130 @@
+{{/* Structured data (JSON-LD) — emits different schema.org types per page kind */}}
+
+{{- /* WebSite + SearchAction on homepage */ -}}
+{{- if .IsHome }}
 <script type="application/ld+json">
-  {
-      "@context" : "http://schema.org",
-      "@type" : "BlogPosting",
-      "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "{{ .Site.BaseURL }}"
-      },
-      "articleSection" : "{{ .Section }}",
-      "name" : "{{ .Title }}",
-      "headline" : "{{ .Title }}",
-      "description" : "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
-      "inLanguage" : "{{ .Lang }}",
-      {{- if isset .Params "author" }}
-      {{- $name := (index .Site.Data.authors .Params.author).name }}
-      "author" : "{{ $name }}",
-      "creator" : "{{ $name }}",
-      "publisher": "{{ $name }}",
-      "accountablePerson" : "{{ $name }}",
-      "copyrightHolder" : "{{ $name }}",
-      {{- end }}
-      "copyrightYear" : "{{ .Date.Format "2006" }}",
-      "datePublished": "{{ .Date | safeHTML }}",
-      "dateModified" : "{{ .Date | safeHTML }}",
-      "url" : "{{ .Permalink }}",
-      "wordCount" : "{{ .WordCount }}",
-      "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }}"Blog" ]
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ .Site.Title }},
+  "url": {{ .Site.BaseURL }},
+  "description": {{ .Site.Params.description }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ .Site.BaseURL }}?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
   }
-  </script>
+}
+</script>
+{{- end }}
+
+{{- /* Article schema on single content pages (not home, not list pages) */ -}}
+{{- if and .IsPage (not .IsHome) }}
+{{- $img := "" }}
+{{- with .Resources.GetMatch "cover*" }}{{ $img = .Permalink }}{{ end }}
+{{- if not $img }}{{ with .Params.image }}{{ $img = (. | absURL) }}{{ end }}{{ end }}
+{{- if not $img }}{{ with .Resources.GetMatch "*.{jpg,jpeg,png,webp}" }}{{ $img = .Permalink }}{{ end }}{{ end }}
+{{- if not $img }}{{ $img = printf "%s%s" .Site.BaseURL "images/default-cover.jpg" }}{{ end }}
+{{- $isTech := eq .Section "programming" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {{ if $isTech }}"TechArticle"{{ else }}"BlogPosting"{{ end }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink }}
+  },
+  "headline": {{ .Title }},
+  "name": {{ .Title }},
+  "description": {{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }},
+  "image": {{ $img }},
+  "articleSection": {{ .Section }},
+  "inLanguage": {{ .Lang }},
+  {{- if isset .Params "author" }}
+  {{- $a := index .Site.Data.authors .Params.author }}
+  "author": {
+    "@type": "Person",
+    "name": {{ $a.name }}{{ with $a.short_bio }},
+    "description": {{ . }}{{ end }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": {{ $a.name }}
+  },
+  {{- end }}
+  "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }},
+  "url": {{ .Permalink }},
+  "wordCount": {{ .WordCount }},
+  "keywords": [{{ range $i, $t := .Params.tags }}{{ if $i }}, {{ end }}{{ $t }}{{ end }}]
+}
+</script>
+{{- end }}
+
+{{- /* Person schema on about-me page */ -}}
+{{- if eq .RelPermalink "/about-me/" }}
+{{- $a := index .Site.Data.authors "Tomas" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tomas Chudjak",
+  "alternateName": {{ $a.name }},
+  "url": "{{ .Site.BaseURL }}about-me/",
+  "image": "{{ .Site.BaseURL }}images/author/tomas-profile.jpg",
+  "jobTitle": "Software Developer",
+  "description": {{ $a.short_bio }},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Zilina",
+    "addressCountry": "SK"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Il Doppio coffee",
+    "url": "https://ildoppio.coffee"
+  },
+  "knowsAbout": ["Web Development", "AWS", "DevOps", "Node.js", "Vue.js", "Go", "CI/CD", "Test Automation"],
+  "sameAs": [
+    {{- $links := slice }}
+    {{- range $a.social }}{{ with .url }}{{ $links = $links | append . }}{{ end }}{{ end }}
+    {{- range $i, $u := $links }}{{ if $i }},{{ end }}
+    {{ $u }}
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}
+
+{{- /* BreadcrumbList on any non-home page */ -}}
+{{- if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {{ .Site.BaseURL }}
+    }{{ if and .Section (ne .Section "") }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ with .Site.GetPage (printf "/%s" .Section) }}{{ .Title }}{{ else }}{{ .Section | title }}{{ end }},
+      "item": "{{ .Site.BaseURL }}{{ .Section }}/"
+    }{{ if .IsPage }},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ .Title }},
+      "item": {{ .Permalink }}
+    }{{ end }}{{ end }}
+  ]
+}
+</script>
+{{- end }}

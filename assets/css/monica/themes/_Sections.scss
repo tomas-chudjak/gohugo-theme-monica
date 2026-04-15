@@ -1,0 +1,50 @@
+// Section-based theming via CSS custom properties
+// Replaces the old single-theme SCSS approach
+
+:root {
+  --color-primary: #2d3142;
+  --color-secondary: #4f5d75;
+  --color-accent: #f95738;
+  --color-bg: #f8f9fa;
+  --color-wall: #5a6392;
+  --color-header-bg: #4f5d75;
+  --color-text: #2d3142;
+  --color-text-light: rgba(45, 49, 66, 0.6);
+  --color-footer-bg: #2d3142;
+  --color-footer-text: #ccc;
+  --color-border: #e9eaeb;
+  --color-card-bg: #ffffff;
+  --color-card-shadow: rgba(45, 49, 66, 0.08);
+  --color-gray: #606c76;
+  --color-initial: #fff;
+}
+
+[data-section="programming"] {
+  --color-accent: #f95738;
+  --color-header-bg: #4f5d75;
+  --color-wall: #5a6392;
+}
+
+[data-section="chess"] {
+  --color-accent: #e94560;
+  --color-header-bg: #16213e;
+  --color-wall: #8d99ae;
+  --color-primary: #1a1a2e;
+  --color-secondary: #16213e;
+  --color-text: #1a1a2e;
+  --color-text-light: rgba(26, 26, 46, 0.6);
+  --color-footer-bg: #1a1a2e;
+  --color-card-shadow: rgba(26, 26, 46, 0.08);
+}
+
+[data-section="coffee"] {
+  --color-accent: #d4a574;
+  --color-header-bg: #5c3d2e;
+  --color-wall: #c4a882;
+  --color-primary: #3c2415;
+  --color-secondary: #5c3d2e;
+  --color-text: #3c2415;
+  --color-text-light: rgba(60, 36, 21, 0.6);
+  --color-footer-bg: #3c2415;
+  --color-card-shadow: rgba(60, 36, 21, 0.08);
+}

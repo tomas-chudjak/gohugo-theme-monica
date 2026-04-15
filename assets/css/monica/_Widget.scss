@@ -23,14 +23,31 @@
       margin: 0 0 0.8rem;
     }
     a{
-      @include style-widget-link;
+      color: var(--color-primary);
       text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover{
+        color: var(--color-accent);
+      }
     }
 
     &.widget-menu__inline{
       li{
         display: inline-block;
-        margin: 0 0.6rem 0 0;
+        margin: 0 0.4rem 0.6rem 0;
+      }
+      a{
+        display: inline-block;
+        padding: 0.2rem 0.8rem;
+        background: var(--color-bg);
+        border-radius: 2rem;
+        font-size: $font-size-xs;
+
+        &:hover{
+          background: var(--color-accent);
+          color: var(--color-initial);
+        }
       }
     }
 

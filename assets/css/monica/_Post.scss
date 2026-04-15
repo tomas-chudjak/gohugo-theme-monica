@@ -1,5 +1,7 @@
 .post{
   margin-bottom: 3.6rem;
+  padding-bottom: 3.6rem;
+  border-bottom: 1px solid var(--color-border);
 
   &-img{
     margin: 0 0 0.8rem;
@@ -16,9 +18,15 @@
   &-title{
     text-transform: capitalize;
     margin:0;
-    
+
     a{
-      @include style-headline;
+      color: var(--color-primary);
+      transition: color 0.2s ease;
+
+      &:hover{
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
     }
   }
 
@@ -30,7 +38,7 @@
 // Larger than mobile screen
 @media (min-width: 40.0rem){
   .post{
- 
+
     &-inline{
       display: flex;
     }

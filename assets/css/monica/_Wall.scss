@@ -1,3 +1,46 @@
+.wall-intro{
+  position: relative;
+  z-index: 1;
+  padding: 8rem 0 3rem;
+  color: #fff;
+
+  &__title{
+    color: #fff;
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+
+    strong{
+      font-weight: 700;
+    }
+
+    .wall-intro__pronunciation{
+      font-weight: 300;
+      font-size: 0.6em;
+      opacity: 0.7;
+      font-style: italic;
+    }
+  }
+
+  &__text{
+    font-size: $font-size-m;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 60rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 40.0rem){
+  .wall-intro{
+    padding: 10rem 0 4rem;
+
+    &__title{
+      font-size: 3.2rem;
+    }
+  }
+}
+
 .wall{
   width: 100%;
   height: 55vh;
@@ -7,5 +50,26 @@
   left: 0;
   right: 0;
   z-index: -1;
-  @include style-wall;
+  background-color: var(--color-wall);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.12) 40px,
+      rgba(255,255,255,0.12) 42px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.08) 40px,
+      rgba(255,255,255,0.08) 42px
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-secondary) 0%,
+      var(--color-wall) 40%,
+      var(--color-wall) 100%
+    );
 }

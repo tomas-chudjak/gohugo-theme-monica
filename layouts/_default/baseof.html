@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
   {{- partial "head/head.html" . -}}
-  <body>
+  <body data-section="{{ .Section | default "home" }}">
     <div class="wall"></div>
-    
+
+    {{ if .IsHome }}
+    <div class="wall-intro wrapper">
+      <div class="container">
+        <h1 class="wall-intro__title">Hi, I'm <strong>Tomas Chudjak</strong> <span class="wall-intro__pronunciation">(reads as Kudiak)</span></h1>
+        <p class="wall-intro__text">Developer, DevOps engineer, frontend engineer &amp; AI enthusiast with a passion for chess and coffee roasting.</p>
+      </div>
+    </div>
+    {{ end }}
+
     <main class="main wrapper">
       {{- partial "main/header.html" . -}}
       <div class="container">

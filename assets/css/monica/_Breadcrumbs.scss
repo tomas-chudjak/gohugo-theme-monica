@@ -1,9 +1,9 @@
 .breadcrumbs{
-  color: $color-gray;
-  
+  color: var(--color-gray);
+
   &-link{
     font-size: $font-size-xs;
     text-transform: uppercase;
-    color: $color-gray;
+    color: var(--color-gray);
   }
 }

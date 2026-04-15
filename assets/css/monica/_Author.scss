@@ -29,8 +29,13 @@
     }
     a{
       font-size: $font-size-s;
-      @include style-widget-link;
+      color: var(--color-primary);
       text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover{
+        color: var(--color-accent);
+      }
     }
   }
 }

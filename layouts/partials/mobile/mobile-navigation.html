@@ -1,14 +1,17 @@
 <div id="mobileNavigation" class="mobile-navigation">
   <div class="mobile-navigation__header right">
-    
+
   </div>
   <div class="mobile-navigation__content">
     <nav class="mobile-nav">
       <ul>
         {{ $currentPage := . }}
+        {{ $section := .Section }}
         {{ range .Site.Menus.main }}
-          <li class="{{ if $currentPage.HasMenuCurrent "main" .}}active{{end}}">
-            <a href="{{ .URL }}" title="{{ .Name }}">{{ .Pre}} {{ .Name }}</a>
+          {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+          {{ $isSectionMatch := and (not $isActive) (eq .Identifier $section) }}
+          <li class="{{ if or $isActive $isSectionMatch }}active{{ end }}">
+            <a href="{{ .URL }}" title="{{ .Name }}">{{ .Pre }} {{ .Name }}</a>
           </li>
         {{ end }}
       </ul>

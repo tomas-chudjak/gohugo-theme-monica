@@ -1,3 +1,26 @@
+.subtitle-description{
+  color: var(--color-text-light);
+  margin-top: -1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.meta-link{
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  background: var(--color-accent);
+  color: var(--color-initial);
+  border-radius: 0.3rem;
+  font-size: $font-size-xs;
+  text-decoration: none;
+  font-weight: 700;
+
+  &:hover{
+    color: var(--color-initial);
+    text-decoration: none;
+    opacity: 0.85;
+  }
+}
+
 .meta{
   margin:0 0 0.2rem;
 
@@ -12,14 +35,14 @@
   &.meta-border{
     border-top: .1rem dashed;
     border-bottom: .1rem dashed;
-    border-color: $color-border;
+    border-color: var(--color-border);
     padding: 1.2rem 0;
   }
 
   &-item{
     margin: 0 0 1.2rem 0;
     font-size: $font-size-xs;
-    color: $color-text-ligth;
+    color: var(--color-text-light);
     font-weight: 700;
 
     &:last-child{

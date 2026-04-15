@@ -2,10 +2,10 @@
 
   &__link{
     @include header-link;
-    @include style-menu-link;
+    color: var(--color-initial);
 
     &:hover{
-      color: $color-initial;
+      color: var(--color-initial);
       text-decoration: none;
     }
   }

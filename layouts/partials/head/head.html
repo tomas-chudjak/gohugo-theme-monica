@@ -27,7 +27,7 @@
 
   {{ "<!-- Main Stylesheet -->" | safeHTML }}
   {{- $sass := resources.Get "css/styles.scss" }}
-  {{- $styles := $sass | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | minify | fingerprint }}
+  {{- $styles := $sass | resources.ExecuteAsTemplate "main.scss" . | css.Sass | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}"  media="screen">
   
   {{- partial "head/seo-schema" . -}}

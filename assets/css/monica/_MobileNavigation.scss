@@ -2,7 +2,7 @@
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  background: $color-mobile-navigation-bg;
+  background: var(--color-card-bg);
 
   &.open{
     display: flex;
@@ -19,11 +19,11 @@
   &__header{
     a{
       line-height: 6rem;
-      color: $color-gray;
+      color: var(--color-gray);
       text-decoration: none;
 
       &:hover{
-        color: $color-gray;
+        color: var(--color-gray);
         text-decoration: none;
       }
     }
@@ -42,7 +42,7 @@
   &__content{
     padding: 3.2rem 2rem 0;
     height: 100%;
-    
+
     .mobile-nav{
       display: block;
       margin: 0 auto;
@@ -61,7 +61,7 @@
     a{
       font-size: $font-size-m;
       line-height: 3rem;
-      color: $color-text-primary;
+      color: var(--color-primary);
       text-transform: uppercase;
 
       [class^="icon-"]{
@@ -73,11 +73,11 @@
   &__footer{
     a{
       line-height: 6rem;
-      color: $color-gray;
+      color: var(--color-gray);
       text-decoration: none;
 
       &:hover{
-        color: $color-gray;
+        color: var(--color-gray);
         text-decoration: none;
       }
     }

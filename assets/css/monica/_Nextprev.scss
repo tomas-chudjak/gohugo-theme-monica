@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 3.2rem 0 0 0;
-  border-top: .1rem solid $color-border;
+  border-top: .1rem solid var(--color-border);
   font-size: $font-size-xs;
 }
 
@@ -25,7 +25,7 @@
   &-text{
     text-transform: uppercase;
   }
-  
+
   &-title{
     font-size: $font-size-s;
   }

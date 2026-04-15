@@ -1,7 +1,8 @@
 .main{
   min-height: calc(100vh - 24rem);
-  background: $color-initial;
+  background: var(--color-card-bg);
   border-radius: $border-radius;
+  box-shadow: 0 1px 3px var(--color-card-shadow);
 }
 
 .wrapper{
@@ -13,5 +14,9 @@
 @media (min-width: 40.0rem){
   .main{
     margin-top: 7.5rem;
+  }
+
+  [data-section="home"] .main{
+    margin-top: 0;
   }
 }

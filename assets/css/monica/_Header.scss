@@ -1,20 +1,16 @@
 .header{
   padding: 0;
   margin: 0 0 3.5rem;
-  @include style-header;
+  background: var(--color-header-bg);
 
   &-row{
     display: flex;
     justify-content: space-between;
   }
 
-  &-item{
-    
-  }
-
   .logo{
     @include header-link;
-    @include style-menu-link;
+    color: var(--color-initial);
   }
 }
 
@@ -23,7 +19,7 @@
 
   .header{
     border-radius: $border-radius $border-radius 0 0;
-    
+
     .logo{
       padding: 0;
     }

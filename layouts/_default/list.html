@@ -1,19 +1,23 @@
 {{ define "main" }}
 
-  {{- partial "main/breadcrumbs" . }}
   {{- partial "main/title" .Title }}
-
-  {{- partial "meta/results" . }}
 
   <div class="row">
     <div class="column column-75">
       <section class="content">
-      {{ range (.Paginator).Pages }}
-        {{- partial "post/inline" . }}
+      {{ if .Params.coming_soon }}
+        <div class="coming-soon-page">
+          <p class="coming-soon-page__text">This section is coming soon. Stay tuned for new content!</p>
+        </div>
+      {{ else }}
+        {{- partial "meta/results" . }}
+        {{ range (.Paginator).Pages }}
+          {{- partial "post/inline" . }}
+        {{ end }}
+        {{- template "_internal/pagination.html" . -}}
       {{ end }}
-      </section>
-      {{- template "_internal/pagination.html" . -}}
       <hr>
+      </section>
     </div>
     <div class="column">
       {{- partial "sidebar/default" . }}

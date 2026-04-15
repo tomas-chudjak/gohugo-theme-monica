@@ -1,8 +1,8 @@
 // override of the default Milligram's grid
 @import '_Grid';
 
-// Monica's theme
-@import 'themes/Blog';
+// Section-based theming (CSS custom properties)
+@import 'themes/Sections';
 @import 'General';
 @import 'Mixins';
 @import 'Header';
@@ -22,7 +22,9 @@
 @import 'Author';
 @import 'Wall';
 @import 'Icons';
-@import 'NextPrev';
+@import 'Nextprev';
 @import 'Breadcrumbs';
 @import 'MobileMenu';
 @import 'MobileNavigation';
+@import 'Hero';
+@import 'SectionCard';
