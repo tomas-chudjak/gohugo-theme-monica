@@ -9,7 +9,7 @@
         {{ with .Resources.GetMatch "cover" }}
         <div class="cover-img">
           <a href="{{ .Permalink }}" title="{{ .Title }}">
-            {{ $image := .Fill "805x453" }}
+            {{ $image := .Fit "805x453 q90" }}
             
             {{- partial "image/figure-caption.html" $image }}
           </a>

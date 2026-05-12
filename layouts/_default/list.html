@@ -16,12 +16,13 @@
         {{ end }}
         {{- template "_internal/pagination.html" . -}}
       {{ end }}
-      <hr>
       </section>
     </div>
     <div class="column">
       {{- partial "sidebar/default" . }}
     </div>
   </div>
+
+  {{- partial "main/section-cards.html" (dict "exclude" (slice .Section)) }}
 
 {{ end }}

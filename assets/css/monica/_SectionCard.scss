@@ -1,3 +1,14 @@
+a.section-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 .section-card {
   background: var(--color-card-bg);
   border-radius: 0.8rem;
@@ -94,11 +105,12 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.4rem;
-  margin-bottom: 4rem;
+  padding-top: 2.4rem;
+  padding-bottom: 6rem;
 }
 
 @media (min-width: 40.0rem) {
   .sections-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
