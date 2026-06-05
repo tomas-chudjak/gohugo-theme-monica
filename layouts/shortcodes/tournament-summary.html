@@ -1,0 +1,44 @@
+<div class="tournament-summary">
+  <div class="tournament-summary__header">
+    <span class="tournament-summary__icon">&#9822;</span>
+    <span class="tournament-summary__title">Tournament Results</span>
+  </div>
+  <dl class="tournament-summary__list">
+    {{ with .Get "date" }}
+    <div class="tournament-summary__row">
+      <dt>Date</dt>
+      <dd>{{ . }}</dd>
+    </div>
+    {{ end }}
+    {{ with .Get "format" }}
+    <div class="tournament-summary__row">
+      <dt>Format</dt>
+      <dd>{{ . }}</dd>
+    </div>
+    {{ end }}
+    {{ with .Get "players" }}
+    <div class="tournament-summary__row">
+      <dt>Players</dt>
+      <dd>{{ . }}</dd>
+    </div>
+    {{ end }}
+    {{ with .Get "placement" }}
+    <div class="tournament-summary__row">
+      <dt>Placement</dt>
+      <dd><strong>{{ . }}.</strong></dd>
+    </div>
+    {{ end }}
+    {{ with .Get "score" }}
+    <div class="tournament-summary__row">
+      <dt>Score</dt>
+      <dd><strong>{{ . }}</strong></dd>
+    </div>
+    {{ end }}
+    {{ with .Get "link" }}
+    <div class="tournament-summary__row">
+      <dt>Link</dt>
+      <dd><a href="{{ . }}" target="_blank" rel="noopener">chess-results.com</a></dd>
+    </div>
+    {{ end }}
+  </dl>
+</div>

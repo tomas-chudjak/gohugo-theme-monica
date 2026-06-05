@@ -6,7 +6,9 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
   {{- hugo.Generator -}}
   {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-  
+  <meta name="robots" content="{{ if .Params.draft }}noindex, nofollow{{ else }}{{ if .Params.noindex }}noindex, follow{{ else }}index, follow{{ end }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+
   {{ "<!-- Facebook meta -->" | safeHTML }}
   {{ template "_internal/opengraph.html" . }}
 

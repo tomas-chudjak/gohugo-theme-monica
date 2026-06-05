@@ -8,8 +8,8 @@
     {{ with .Resources.GetMatch "cover" }}
     <div class="post-img">
       <a href="{{ $permalink }}" title="{{ $title }}">
-        {{ $desktopImage := .Fill "175x175" }}
-        {{ $defaultImage := .Fill "600x337"}}
+        {{ $desktopImage := .Fit "175x175 q90" }}
+        {{ $defaultImage := .Fit "600x337 q90" }}
 
         <picture class="picture">
           <source 

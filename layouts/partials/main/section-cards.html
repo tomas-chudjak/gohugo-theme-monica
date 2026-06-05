@@ -1,0 +1,16 @@
+{{/* Section cards - displays cards for blog sections
+     Pass a slice of section names to exclude via .exclude */}}
+{{ $exclude := .exclude | default slice }}
+<div class="sections-grid">
+  {{ range $name, $config := site.Params.sections }}
+    {{ if not (in $exclude $name) }}
+      <a href="/{{ $name }}/" class="section-card" style="--section-accent: {{ $config.accent }}">
+        <div class="section-card__header">
+          <i class="{{ $config.icon }}"></i>
+          <h3 class="section-card__title">{{ $config.label }}</h3>
+        </div>
+        <p class="section-card__description">{{ $config.description }}</p>
+      </a>
+    {{ end }}
+  {{ end }}
+</div>

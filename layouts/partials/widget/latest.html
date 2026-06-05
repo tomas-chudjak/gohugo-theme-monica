@@ -7,7 +7,7 @@
     <li>
       <a href="{{ .RelPermalink }}" title="{{ .Title }}">
         {{ with .Resources.GetMatch "cover" }}
-        {{ $defaultImage := .Fill "600x337"}}
+        {{ $defaultImage := .Fit "600x337 q90"}}
         <div class="widget-img">
           <img src="{{ $defaultImage.Permalink }}" />
         </div>
