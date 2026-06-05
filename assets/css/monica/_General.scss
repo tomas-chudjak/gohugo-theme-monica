@@ -1,7 +1,7 @@
-// Variables - Major Third scale (1.25 ratio), base 1.6rem
+// Variables - Major Third scale (1.25 ratio), base 1.9rem
 $font-size-xs: 1.3rem;
-$font-size-s: 1.6rem;
-$font-size-m: 1.8rem;
+$font-size-s: 1.9rem;
+$font-size-m: 1.9rem;
 $font-size-l: 2.2rem;
 $font-size-xl: 2.8rem;
 $font-size-xxl: 3.6rem;
@@ -19,7 +19,7 @@ body {
   padding: 0;
   font-family: $font-body;
   font-size: $font-size-body;
-  line-height: 1.6;
+  line-height: 2;
   letter-spacing: -0.005em;
   color: var(--color-text);
   text-rendering: optimizeLegibility;
